@@ -52,7 +52,7 @@ $ git add docs/*.txt
 To add all text files of a particular directory(docs) to staging area.
 
 
-
+Little thing's added right..
 
 $ git add docs/
 To add all files in a particular directory(docs) to staging area.

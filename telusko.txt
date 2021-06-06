@@ -1,0 +1,90 @@
+
+
+Hi good evening,
+
+Repositories can be divided into two types based on the usage on a server. These are:
+
+Bare Repositories: These repositories are used to share the changes that are done by different developers. A user is not allowed to modify this repository or create a new version for this repository based on the modifications done.
+Non-bare Repositories: Non-bare repositories are user-friendly and hence allow the user to create new modifications of files and also create new versions for the repositories. Cloning process by default creates a non-bare repository if any parameter is not specified during the clone operation.
+
+
+Working Area or Staging of a Git Repository
+A working tree in a Git Repository is the collection of files which are originated form a certain version of the repository. It helps in tracking the changes done by a specific user on one version of the repository. Whenever an operation is committed by the user, Git will look only for the files which are present in the working area, and not all the modified files. Only the files which are present in the working area are considered for commit operation.
+The user of the working tree gets to change the files by modifying existing files and removing or creating files.
+There are a few stages of a file in the working tree of a repository:
+
+Untracked: In this stage, the Git repository is unable to track the file, which means that the file is never staged nor it is committed.
+Tracked: When the Git repository tracks a file, which means the file is committed but is not staged in the working directory.
+Staged: In this stage, the file is ready to be committed and is placed in the staging area waiting for the next commit.
+Modified/Dirty: When the changes are made to the file i.e. the file is modified but the change is not yet staged.
+After the changes are done in the working area, the user can either update these changes in the GIT repository or revert the changes.
+
+Working with a Repository
+A GIT repository allows performing various operations on it to create different versions of a project. These operations include the addition of files, creating new repositories, committing an action, deleting a repository, etc. These modifications will result in the creation of different versions of a project.
+
+
+
+
+Adding to a Repository
+After performing various modifications on a file in the Working Area, GIT needs to follow two more steps to save these changes in the local repository.
+These steps are:
+
+Adding the changes to the Index(Staging Area)
+Committing the indexed changes into the repository
+Adding changes to the Index
+This process is done by the use of git add command. When the changes have been made in the Working Tree/Area. These changes need to be added to the Staging Area for further modification of the file. git add command adds the file in the local repository. This stages them for the commit process.
+
+Syntax:
+
+$ git add File-name
+Different ways to use add command:
+
+$ git add
+To add a specific list of files to staging area.
+
+$ git add --all
+To add all files of current directory to staging area.
+
+$ git add *.txt
+To add all text files of the current directory to staging area.
+
+$ git add docs/*.txt
+To add all text files of a particular directory(docs) to staging area.
+
+
+
+
+$ git add docs/
+To add all files in a particular directory(docs) to staging area.
+
+$ git add “*.txt”
+To add text files of entire project to staging area.
+
+Committing changes from the Index
+Committing process is done in the staging area on the files which are added to the Index after git add command is executed. This committing process is done by the use of git commit command. This command commits the staged changes to the local repository.
+Syntax:
+
+$ git commit -m "Add existing file"
+This commit command is used to add any of the tracked files to staging area and commit them by providing a message to remember.
+
+
+
+Synchronizing with Remote Repositories
+Git allows the users to perform operations on the Repositories by cloning them on the local machine. This will result in the creation of various different copies of the project. These copies are stored on the local machine and hence, the users will not be able to sync their changes with other developers. To overcome this problem, Git allows performing syncing of these local repositories with the remote repositories.
+This synchronization can be done by the use of two commands in the Git. These commands are:
+
+push
+pull
+Push: This command is used to push all the commits of the current repository to the tracked remote repository. This command can be used to push your repository to multiple repositories at once.
+
+Syntax:
+
+$ git push -u origin master
+To push all the contents of our local repository that belong to the master branch to the server(Global repository).
+ 
+
+Pull: Pull command is used to fetch the commits from a remote repository and stores them in the remote branches. There might be a case when other users perform changes on their copy of repositories and upload them with other remote repositories. But in that case, your copy of the repository will become out of date. Hence, to re-synchronize your copy of the repository with the remote repository, the user has to just use the git pull command to fetch the content of the remote repository.
+Syntax:
+
+$ git pull
+
